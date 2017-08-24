@@ -15,6 +15,7 @@ Our implementation **py-rfcn** is adapted from py-R-FCN, with additions and modi
 ## code usage 
 
 ### 1. Prepare dataset
+(your code is in `py-rfcn`)
 ```
 $ cd py-rfcn
 $ cd tools
