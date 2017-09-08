@@ -5,7 +5,7 @@ set -e
 export PYTHONUNBUFFERED="True"
 cd ..
 
-GPU_ID=1
+GPU_ID=0
 NET="ResNet-101"
 DATASET="aic"
 SIGNAL=$1
