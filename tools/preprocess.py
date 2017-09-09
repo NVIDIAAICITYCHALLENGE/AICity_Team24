@@ -6,9 +6,8 @@ from tqdm import *
 
 parser = argparse.ArgumentParser()
 parser.add_argument("in_dir", type = str)
-parser.add_argument("out_dir", type = str)
 args = parser.parse_args()
-OUT = os.path.join(args.out_dir, "AICdevkit")
+OUT = "../data/AICdevkit"
 if not os.path.exists(OUT):
     os.mkdir(OUT)
 out_aic = os.path.join(OUT, "AIC")

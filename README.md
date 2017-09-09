@@ -15,24 +15,24 @@ Our implementation **py-rfcn** is adapted from py-R-FCN, with additions and modi
 ## code usage 
 
 ### 1. Prepare dataset
-(your code is in `py-rfcn`)
 ```
-$ cd py-rfcn
-$ cd tools
-$ python ./preprocess.py .. your_tmp_path
+$ mkdir -p CODE_DIR/data/AICdevkit/results/AIC/Main
+$ cd CODE_DIR/tools
+$ python ./preprocess.py DATASET_DIR CODE_DIR/data
 ```
+
 ### 2. Build from source 
-(your aic dataset is in `/dataset`)
 ```
-$ sh compile.sh your_tmp_path /dataset
+$ sh compile.sh
+$ export PYTHONPATH=$PYTHONPATH:CODE_DIR/caffe/python
 ```
 
 ### 3. Test on our pre-trained model
 Download models from [here][1].
 
-Put `ResNet-101-model.caffemodel` in `py-rfcn/data/imagenet_models/`
+Put `ResNet-101-model.caffemodel` in `CODE_DIR/data/imagenet_models/`
 
-Put `aic_trainval` in `py-rfcn/output/rfcn_alt_opt_5step_ohem`
+Put `aic_trainval` in `CODE_DIR/output/rfcn_alt_opt_5step_ohem`
 ```
 $ bash test.sh 0
 ```
@@ -50,7 +50,7 @@ $ sh train.sh 1
 ```
 ### 5. Postprocess for submission
 ```
-$ python postprocess.py your_tmp_dir output_dir
+$ python postprocess.py CODE_DIR/data output_dir
 ```
 [1]: https://www.dropbox.com/sh/5aoifg78vsnhivp/AAC1gwf07beBoVapLpFTNdN6a?dl=0
 
